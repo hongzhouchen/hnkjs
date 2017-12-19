@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="hnkjs.mapper.BannerMapper">
+	<!--插入一条banner数据 -->
+	<insert id="addBanner" parameterType="hnkjs.entities.Banner">
+		INSERT INTO
+		`hnkjs`.`banner` (
+		`b_imgurl`,
+		`b_txt1`,
+		`b_txtlink1`,
+		`b_txt2`,
+		`b_imglink`, 
+		`b_txtlink2`
+		)
+		VALUES
+		(
+		#{b_imgurl},
+		#{b_txt1},
+		#{b_txtlink1},
+		#{b_txt2},
+		#{b_imglink},
+		#{b_txtlink2}
+		);
+	</insert>
+	<!--删除一条数据 -->
+	<delete id="deleteBannerById" parameterType="int">
+		DELETE
+		FROM
+		`hnkjs`.`banner`
+		WHERE `id`=#{id};
+	</delete>
+	<!--查找一条 -->
+	<select id="selectOneImgById" parameterType="int"
+		resultType="hnkjs.entities.Banner">
+		select * from banner where id=#{id}
+	</select>
+	<!--修改 -->
+	<update id="updataBanner" parameterType="hnkjs.entities.Banner">
+		update
+		`hnkjs`.`banner`
+		set
+		`b_imgurl`=#{b_imgurl},
+		`b_txt1`=#{b_txt1},
+		`b_txtlink1`=#{b_txtlink1},
+		`b_txt2`=#{b_txt2},
+		`b_txtlink2`=#{b_txtlink2},
+		`b_imglink`=#{b_imglink}
+		where
+		`id` = #{id} ;
+	</update>
+	<!--查找所有的banner -->
+	<select id="selectAllBanner" resultType="hnkjs.entities.Banner">
+		SELECT
+		`id`,
+		`b_imgurl`,
+		`b_txt1`,
+		`b_txtlink1`,
+		`b_txt2`,
+		`b_txtlink2`,
+		`b_imglink`
+		FROM
+		`hnkjs`.`banner`
+		LIMIT 0, 1000 ;
+	</select>
+</mapper>

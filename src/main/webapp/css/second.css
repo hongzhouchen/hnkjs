@@ -1,0 +1,117 @@
+.second-bg {
+	width: 100%;
+	background: url(../img/second_bg2.jpg) no-repeat;
+	background-size: 100% auto;
+}
+
+.content-box {
+	position: relative;
+	padding: 10px;
+	border: solid 1px #dcdcdc;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	margin-bottom: 5px;	background: #FFFFFF;
+}
+
+
+.bread-line {
+	height: 36px;
+	background: rgba(0, 0, 0, 0.1);
+	margin-bottom: 10px;
+	
+	padding: 8px 15px;
+	
+	list-style: none;
+	border-radius: 4px;
+}
+
+.bread-line ol li {
+	display: inline-block;
+}
+.bread-line ol > li + li:before {
+    padding: 0 5px;
+    color: #333;
+    content: "/\00a0";
+}
+.content-box  .title {
+	position: relative;
+	border-bottom: 1px solid #e6e6e6;
+}
+.content-box .title span{
+	display: inline-block;
+	padding: 10px 5px;
+	font-size: 12px;
+	color: #666;
+}
+.content-box .title span#isyc{
+	border: 1px rgba(0,0,0,0.1) solid;
+	padding: 3px;
+	color: #1467b3;
+	border-radius: 8px;
+}
+.content-box .title h3{
+	font-size: 24px;
+	font-weight: normal;
+	line-height: 50px;
+	padding-bottom: 15px;
+	text-align: center;
+	color: #0b3c61;
+	margin-top: 0;
+	padding-top: 20px;
+}
+.content-box .content{
+	padding: 10px;
+	font-size: 14px;
+    line-height: 160%;
+    color: #4d4d4d;
+}
+
+
+
+.rightmore h2 {
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+    font-size: 18px;
+    color: #434343;
+    margin-top: 0;
+    line-height: 23px;
+    margin-bottom: 0;
+    padding-bottom: 7px;
+}
+.rightmore .list{
+	margin-right: 10px;
+    background: #fff;
+}
+.rightmore .list dl{
+	padding-top: 5px;
+    margin-bottom: 10px;
+}
+.rightmore .list dl dd {
+    line-height: 26px;
+    padding: 0 0 3px 15px;
+    border-bottom: 1px solid #f5f5f5;
+    background: url(http://www.sse.com.cn/images/layout/list-base1-dl-dd.png;wa6b52c695070d1ddb) 5px 10px no-repeat;
+    overflow: hidden;
+}
+.rightmore .list dl dd span {
+    color: #9f9f9f;
+    font-size: 12px;
+    float: right;
+    margin: 0 3px 0 9px;
+}
+.rightmore .list  dl dd a {
+    color: #545454;
+    font-size: 12px;
+   
+}
+.rightmore .list dl dd a:hover{
+	color: #1467B3;
+	text-decoration: blink;
+}
+.rightmore .list dl dd a:visited {
+    color: #999;
+}
+.rightmore .list dl dd a:link {
+    color: #202020;
+    text-decoration: none;
+}

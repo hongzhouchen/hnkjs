@@ -1,0 +1,18 @@
+package hnkjs.entities;
+
+/**
+ * 后台管理员 实体类
+* @author: Charles
+* @date: 2017年12月14日 下午6:50:50 
+* @version: v1.0.0  
+* @Description:
+ */
+public class Manager {
+   
+	private int id;
+	
+	
+	
+	
+	
+}
