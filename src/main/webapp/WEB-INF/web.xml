@@ -34,11 +34,13 @@
 	</init-param>
 	<load-on-startup>1</load-on-startup>
 </servlet>
+
 <servlet-mapping>
 	<servlet-name>springmvc</servlet-name>
 	<url-pattern>*.action</url-pattern>
 </servlet-mapping>
 
+<!--实现javax.servlet.Filter接口，在web.xml中配置与标签指定使用哪个Filter实现类过滤哪些URL链接。只在web启动时进行初始化操作 -->
 <filter>
 	<description>字符集过滤器</description>
 	<filter-name>encodingFilter</filter-name>
@@ -49,6 +51,7 @@
 		<param-value>UTF-8</param-value>
 	</init-param>
 </filter>
+<!-- 与 filter 关联 -->
 <filter-mapping>
 	<filter-name>encodingFilter</filter-name>
 	<url-pattern>/*</url-pattern>
@@ -61,7 +64,15 @@
 
 <!-- DEFAULT PAGE -->
 <welcome-file-list>
-	<welcome-file>index.action</welcome-file>
+	<welcome-file>admin/selectAllBanner.action</welcome-file>
 </welcome-file-list>
+
+<!--错误代码页面  -->
+<!-- <error-page>
+   <error-code>404</error-code>
+   <location>/404.jsp</location>
+</error-page> -->
+
+
 
 </web-app>

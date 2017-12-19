@@ -29,7 +29,7 @@ public class BannerManageController {
 		String resultMsg="";
 		if (BannerList != null) {
 			map.addAttribute("BannerList", BannerList);
-			  resultMsg = "成功获取了"+BannerList.size()+"条数据";
+			resultMsg = "成功获取了"+BannerList.size()+"条数据";
 		} else {
 			
 			resultMsg = "没有数据";
@@ -79,9 +79,5 @@ public class BannerManageController {
 		}
 	}
 
-	@RequestMapping("/")
-	public String err() throws Exception {
-		return "err/404";
-	}
 
 }
