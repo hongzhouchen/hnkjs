@@ -99,12 +99,15 @@ CREATE TABLE `sys_user` (
   `login_pass` VARCHAR(65) NOT NULL COMMENT '登录密码',
   `user_name` VARCHAR(20) DEFAULT NULL COMMENT '昵称',
   `user_head` VARCHAR(30) DEFAULT NULL COMMENT '头像',
-  `user_phone` VARCHAR(20) DEFAULT NULL COMMENT '手机',
   `user_email` VARCHAR(30) DEFAULT NULL COMMENT '邮箱',
   `user_sex` INT(11) DEFAULT NULL COMMENT '性别',
-  `user_birthday` VARCHAR(30) DEFAULT NULL COMMENT '生日',
+  `login_count` VARCHAR(30) DEFAULT NULL COMMENT '登录次数',
+  `last_logintime` VARCHAR(30)  DEFAULT NULL COMMENT '上一次登录时间',
+  `last_loginip`  VARCHAR(30)  DEFAULT NULL COMMENT '上一次登录ip',
+  `islogin`   BIT  DEFAULT NULL COMMENT '是否已经登录（0，未登录，1已经登录）',
+  `presentstate`  BIT  DEFAULT NULL COMMENT '账号状态',
   `register_time` VARCHAR(30) NOT NULL COMMENT '注册时间',
-  `department_key` VARCHAR(20) DEFAULT NULL COMMENT '部门编码',
+  `department_id` INT(11) DEFAULT NULL COMMENT '部门id',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `uk_sys_user_login_account` (`login_account`)
 ) ENGINE=INNODB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='用户表';
