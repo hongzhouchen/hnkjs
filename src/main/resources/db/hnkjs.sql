@@ -71,7 +71,6 @@ VALUES
      '网站运维',
      '1'
 );
-
 /*角色菜单表*/
 DROP TABLE IF EXISTS `sys_role_authority`;
 CREATE TABLE `sys_role_authority` (
@@ -124,3 +123,5 @@ CREATE TABLE `sys_user_role` (
   CONSTRAINT `fk_sys_user_role_role_id` FOREIGN KEY (`role_id`) REFERENCES `sys_role` (`role_id`),
   CONSTRAINT `fk_sys_user_role_user_id` FOREIGN KEY (`user_id`) REFERENCES `sys_user` (`user_id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='用户角色映射表';
+
+

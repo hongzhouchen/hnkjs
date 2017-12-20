@@ -11,7 +11,7 @@
 	
 	<!-- 缓存管理器 使用Ehcache实现 -->
 	<bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
-		<property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml" />
+		<property name="cacheManagerConfigFile" value="classpath:spring/ehcache-shiro.xml" />
 	</bean>
 	
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
@@ -85,6 +85,7 @@
                 <entry key="sysUser" value-ref="sysUserFilter"/>
             </util:map>
         </property>
+        
         <property name="filterChainDefinitions">
             <value>
             	/static/** = anon
