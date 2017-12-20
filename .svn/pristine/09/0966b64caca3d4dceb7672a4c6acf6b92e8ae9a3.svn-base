@@ -54,8 +54,6 @@
 
 	<!-- 拦截器 -->
 	
-	
-	
     <!-- 静态资源解析包括 ：js、css、img、.. -->
 	<mvc:resources location="/js/" mapping="/js/**" />
 	<mvc:resources location="/img/" mapping="/img/**" />
