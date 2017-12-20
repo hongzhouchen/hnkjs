@@ -23,6 +23,11 @@ public class BannerManageController {
 	@Autowired
 	private IBannerServer mIBannerServer;
 
+	public String addOneBanner() throws Exception{
+		return "";
+	}
+	
+	
 	@RequestMapping("/selectAllBanner")
 	public String selectAllBanner(ModelMap map) throws Exception {
 		List<Banner> BannerList = mIBannerServer.selectAllBanner();

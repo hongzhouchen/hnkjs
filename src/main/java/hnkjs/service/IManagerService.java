@@ -10,7 +10,7 @@ import hnkjs.entities.Manager;
  * @version: v1.0.0
  * @Description: 后台用户管理服务接口
  */
-public interface IManageService {
+public interface IManagerService {
 
 	/**
 	 * 添加一个后台管理员
