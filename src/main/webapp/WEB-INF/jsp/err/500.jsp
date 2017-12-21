@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>404</title>
+<title>500</title>
 <style>
 .errbox {
     margin: 70px auto 0px auto;
@@ -27,8 +27,7 @@
 	  <a href="<%=basePath%>">
 	     <img  src="<%=basePath%>/img/err/404.jpg" alt="访问内容不存在"/> 
 	  </a>
-		500
-
+		500的错误
 	</div>
 </body>
 </html>
