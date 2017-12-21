@@ -1,6 +1,6 @@
 package hnkjs.entities;
 
-public class Banner {
+public class Banner extends BaseEntity{
 	private int id;
 	private String b_imgurl;
 	private String b_txt1;

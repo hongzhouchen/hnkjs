@@ -18,7 +18,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="sys_user")
-public class Manager {
+public class Manager extends BaseEntity{
 	@Id  
     @GeneratedValue  
     @Column(name = "user_id") 
