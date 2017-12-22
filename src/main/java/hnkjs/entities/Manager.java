@@ -21,7 +21,6 @@ import javax.persistence.Table;
 public class Manager extends BaseEntity{
 	@Id  
     @GeneratedValue  
-    @Column(name = "user_id") 
 	private int id;// ID 主键,自增
 	
 	@Column(name = "user_name")

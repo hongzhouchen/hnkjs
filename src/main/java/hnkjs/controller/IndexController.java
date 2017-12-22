@@ -16,12 +16,11 @@ public class IndexController {
 	@Autowired
 	private IBannerServer mIBannerServer;
 	
-	@RequestMapping("/index.action")
+	@RequestMapping("/index")
 	public String index(ModelMap mMap) throws Exception{
 		Banner mBanner = mIBannerServer.selectOneImgById(1);
 		System.out.println(mBanner);
 		mMap.addAttribute("mBanner", mBanner);
 		return "index";
 	}
-	
 }

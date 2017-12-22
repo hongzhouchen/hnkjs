@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="3.0">
 	<display-name>hnkjs Web Application</display-name>
 
-	<!-- Spring-mybatis的配置文件 -->
+	<!--加载配置文件 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
@@ -90,7 +90,7 @@
 
 	<!--默认启动的url DEFAULT PAGE -->
 	<welcome-file-list>
-		<welcome-file>admin/selectAllBanner.action</welcome-file>
+		<welcome-file>admin/index.action</welcome-file>
 	</welcome-file-list>
 
 	<!--错误代码页面,这种方式只能静态页面 -->
@@ -100,15 +100,15 @@
     </error-page>   -->
     <error-page>  
         <error-code>404</error-code>  
-        <location>/WEB-INF/jsp/404.jsp</location>  
+        <location>/src/main/webapp/WEB-INF/jsp/err/404.jsp</location>  
     </error-page>  
     <error-page>  
         <error-code>500</error-code>  
-        <location>/WEB-INF/jsp/500.jsp</location>  
+        <location>/src/main/webapp/WEB-INF/jsp/err/500.jsp</location>  
     </error-page>  
     <error-page>  
         <exception-type>java.lang.Throwable</exception-type>  
-        <location>/WEB-INF/jsp/500.jsp</location>  
+        <location>/src/main/webapp/WEB-INF/jsp/err/500.jsp</location>  
     </error-page>  
 
 </web-app>

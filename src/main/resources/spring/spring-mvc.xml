@@ -20,8 +20,8 @@
 		比如json转换解析器就默认加载了，如果使用mvc:annotation-driven不用配置上边的RequestMappingHandlerMapping和RequestMappingHandlerAdapter 
 		实际开发时使用mvc:annotation-driven -->
 	<!--conversion-service="conversionService" validator="validator" 加了这个属性就会报错 -->
-	<mvc:annotation-driven>
-		<mvc:message-converters>
+	<mvc:annotation-driven />
+		<!-- <mvc:message-converters>
 			<bean
 				class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
 			<bean class="org.springframework.http.converter.FormHttpMessageConverter" />
@@ -30,8 +30,7 @@
 			<bean
 				class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
 		</mvc:message-converters>
-	</mvc:annotation-driven>
-
+	</mvc:annotation-driven> -->
 	<!-- 默认访问跳转到登录页面(即定义无需Controller的url<->view直接映射) -->
 	<!-- <mvc:view-controller path="/" view-name="forward:/login.jsp"/> -->
 
@@ -63,9 +62,9 @@
 			<props>
 				<!-- 遇到MaxUploadSizeExceededException异常时，自动跳转到/WEB-INF/error_fileupload.jsp页面 -->
 				<prop
-					key="org.springframework.web.multipart.MaxUploadSizeExceededException">WEB-INF/err/500.jsp</prop>
+					key="org.springframework.web.multipart.MaxUploadSizeExceededException">WEB-INF/jsp/err/500.jsp</prop>
 				<!-- 处理其它异常(包括Controller抛出的),看需求配置-->
-				<prop key="java.lang.Throwable">WEB-INF/err/500.jsp</prop>
+				<prop key="java.lang.Throwable">WEB-INF/jsp/err/500.jsp</prop>
 			</props>
 		</property>
 	</bean>
