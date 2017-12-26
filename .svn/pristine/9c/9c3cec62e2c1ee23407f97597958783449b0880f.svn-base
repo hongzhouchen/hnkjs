@@ -27,35 +27,11 @@ public class WebParamterController  extends BaseController{
 	@ResponseBody
 	@RequestMapping("modifyLogo")
 	public String modifyLogo(){
+		
+		
+		
 		return "";
 	}
-	
-	/**
-	 * 修改网站名字
-	 * @param newName
-	 * @return
-	 */
-	@ResponseBody
-	@RequestMapping("modifyWebName")
-	public String modifyWebName(String newName){
-		 return "";
-	}
-	
-	/**
-	 * 修改网站描述
-	 * @param explian
-	 * @return
-	 */
-	@ResponseBody
-	@RequestMapping("modifyWebExplain")
-	public String modifyWebExplain(String explian){
-		 return "";
-	}
-	
-	
-	
-	
-	
 	
 	
 	
