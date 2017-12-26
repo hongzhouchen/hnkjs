@@ -9,7 +9,7 @@ import java.util.Map;
 * @author: Charles
 * @date: 2017年12月21日 上午10:19:54 
 * @version: v1.0.0  
-* @Description: 需要网络对象传输的时候就有用了 
+* @Description: 需要网络对象传输的时候就有用了 ,所有的Bean都需要去继承该类
  */
 public class BaseEntity implements Serializable {
 
