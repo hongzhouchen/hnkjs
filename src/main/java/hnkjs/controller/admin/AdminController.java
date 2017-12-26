@@ -4,6 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * 后台首页获取的业务层代码
+* @author: Charles
+* @date: 2017年12月26日 上午8:40:55 
+* @version: v1.0.0  
+* @Description: 该函数的功能描述
+ */
 @RequestMapping("admin")
 @Controller
 public class AdminController {
