@@ -1,6 +1,5 @@
 package hnkjs.controller.admin;
 
-import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
@@ -13,11 +12,9 @@ import hnkjs.entities.Manager;
 @RequestMapping("/admin")
 @Controller
 public class UserManageController {
-  
-	
+
 	@RequestMapping("login")
-	public String login(Manager mManager){
-		System.out.println("loging 请求进来了==");
+	public String login(@RequestParam("loginform") Manager mManager){
 		
 		Subject subject = SecurityUtils.getSubject();
 		if(!subject.isAuthenticated()){//如果没有被认证
@@ -27,10 +24,8 @@ public class UserManageController {
 			subject.login(usernamePasswordToken);
 		}
 		
-		return "admin/index";
+		return "";
 	}
-	
-	
 	
 	
 }
