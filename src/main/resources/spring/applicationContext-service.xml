@@ -13,4 +13,6 @@
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
 	  <bean id="IBannerServer" class="hnkjs.service.impl.BannerServerImp"/> 
+	  
+	   <bean id="IManagerService" class="hnkjs.service.impl.ManagerServiceImp"/> 
 </beans>
