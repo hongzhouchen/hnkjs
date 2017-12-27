@@ -21,7 +21,11 @@
 	</blockquote>
 
 
+<<<<<<< HEAD
 	<form id="loginform" name="loginform" method="post" action="${pageContext.request.contextPath }/admin/login.action">
+=======
+	<form id="loginform" name="loginform" method="post" action="admin/login.action" >
+>>>>>>> 6baedf1025af47504193f38c768f7e12fba30e35
 		<div class="layui-form-item">
 			<label class="layui-form-label">用户名：</label>
 			<div class="layui-input-block">
