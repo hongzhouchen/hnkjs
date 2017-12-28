@@ -7,15 +7,13 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-<<<<<<< HEAD
+
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-=======
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
->>>>>>> 6baedf1025af47504193f38c768f7e12fba30e35
+
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import hnkjs.entities.Manager;
@@ -24,7 +22,7 @@ import hnkjs.service.IManagerService;
 @RequestMapping("admin")
 @Controller
 public class UserManageController {
-<<<<<<< HEAD
+
 	
 	@Autowired
 	private IManagerService mIManagerService;
@@ -90,14 +88,6 @@ public class UserManageController {
 		}
 		return "admin/manager/addManager";
 	}
-	
-	
-	
-	
-=======
-
-	@Autowired
-	private IManagerService mIManagerService;
 
 	@RequestMapping("login")
 	public String login(Manager mManager) {
@@ -164,7 +154,7 @@ public class UserManageController {
 	 */
 	@ResponseBody
 	@RequestMapping("modifyManager/{id}")
-	public String deleteManager(int id) throws Exception {
+	public String deleteManager(@PathVariable int id) throws Exception {
 		int resultState = 0;
 		if (id > 0) {
 			Manager manager = mIManagerService.queryOneManagerById(id);
@@ -174,6 +164,4 @@ public class UserManageController {
 		}
 		return "result:" + resultState;
 	}
-
->>>>>>> 6baedf1025af47504193f38c768f7e12fba30e35
 }
