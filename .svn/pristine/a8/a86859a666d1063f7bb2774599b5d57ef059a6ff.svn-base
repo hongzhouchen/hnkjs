@@ -50,17 +50,12 @@ public class UserManageController {
 	 * 
 	 * @param mManager
 	 * @return
-	 * @throws Exception 
 	 */
 	@ResponseBody
 	@RequestMapping("addManager")
-	public String addManager(Manager mManager) throws Exception {
-		int resultState = 0;
-		if(mManager!=null){
-			resultState= mIManagerService.addManager(mManager);
-        }
-		//返回状态码
-		return "result:"+resultState;
+	public String addManager(Manager mManager) {
+
+		return "";
 	}
 
 	/**
