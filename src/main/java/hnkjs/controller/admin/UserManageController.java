@@ -1,5 +1,8 @@
 package hnkjs.controller.admin;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.shiro.SecurityUtils;
@@ -17,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import hnkjs.entities.Manager;
-import hnkjs.entities.Page;
+import hnkjs.entities.PageBean;
 import hnkjs.service.IManagerService;
 
 @RequestMapping("admin")
@@ -128,6 +131,14 @@ public class UserManageController {
 	public String addManager(Manager mManager) throws Exception {
 		int resultState = 0;
 		if(mManager!=null){
+			//設置登录状态为false
+			mManager.setIslogin(false);
+			//设置注册时间 
+			mManager.setRegister_time(new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss").format(new Date()));
+			//设置登录次数
+			mManager.setLogincount(0);
+			//设置当前账号状态（false则不可以登录）
+			mManager.setPresentstate(false);
 			resultState= mIManagerService.addManager(mManager);
         }
 		//返回状态码

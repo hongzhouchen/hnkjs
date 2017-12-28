@@ -2,11 +2,13 @@ package hnkjs.entities;
 
 import java.util.List;
 
-public class Page extends BaseEntity {
+public class PageBean<T> extends BaseEntity {
+	
+	private static final long serialVersionUID = -6768810179652120695L;
 	/** 总记录数 */
 	private int total;
 	/** 分页结果 */
-	private List root;
+	private List<T> root;
 	/** 开始页码 */
 	private int start;
 	/** 每页多少 */
@@ -59,11 +61,11 @@ public class Page extends BaseEntity {
 		this.total = total;
 	}
 
-	public List getRoot() {
+	public List<?> getRoot() {
 		return root;
 	}
 
-	public void setRoot(List root) {
+	public void setRoot(List<T> root) {
 		this.root = root;
 	}
 

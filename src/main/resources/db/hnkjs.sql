@@ -125,4 +125,3 @@ CREATE TABLE `sys_user_role` (
   CONSTRAINT `fk_sys_user_role_user_id` FOREIGN KEY (`user_id`) REFERENCES `sys_user` (`user_id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='用户角色映射表';
 
-

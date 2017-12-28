@@ -1,31 +1,17 @@
-package hnkjs.service;
+package hnkjs.mapper;
 
 import java.util.List;
 
-
-import hnkjs.entities.BaseEntity;
 import hnkjs.entities.PageBean;
 
+public interface  BaseDao<T> {
 
-/**
- * 
-* @ClassName: IBaseServer
-* @Description: TODO(封装常用服务)
-* @author Administrator
-* @date 2017年12月28日
-* @param <T> 实体对象 必须是继承了BaseEntity的类
- */
-public interface IBaseServer<T extends BaseEntity> {
-    
-	
-	
-	
 	/**
 	 * 获取一个实体对象
 	 * @param id 逐渐
 	 * @return
 	 */
-	public  T getEntity(int id);
+	public T getEntity(int id);
 	
 	/**
 	 * 根据一个字符串获取实体
@@ -74,6 +60,9 @@ public interface IBaseServer<T extends BaseEntity> {
 	 * @throws Exception
 	 */
 	public	int  delete(int id) throws Exception;  
+	
+	
+	
 	
 	
 }

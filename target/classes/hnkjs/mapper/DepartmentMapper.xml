@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="hnkjs.mapper.DepartmentMapper">
+	<insert id="save" parameterType="hnkjs.entities.Department">
+		INSERT INTO
+		`hnkjs`.`sys_department`
+		(
+		`department_key`,
+		`department_value`,
+		`parent_departmentkey_id`,
+		`description`,
+		`create_time`
+		)
+		VALUES
+		(
+		#{department_key},
+		#{department_value},
+		#{parent_departmentkey_id},
+		#{description},
+		#{create_time}
+		);
+
+
+
+	</insert>
+
+</mapper>

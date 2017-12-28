@@ -18,47 +18,32 @@ import javax.persistence.Table;
  */
 @Entity
 public class Manager extends BaseEntity{
-	@Id  
-    @GeneratedValue  
 	private int id;// ID 主键,自增
 	
-	@Column(name = "user_name")
 	private String user_name;// 用户名
 	
-	@Column(name = "login_account")
 	private String login_account;// 登录名称
 	
-	@Column(name = "login_pass")
 	private String login_pass;// 登录密码
 	
-	@Column(name = "user_head")
 	private String user_head; // 头像地址
 	
-	@Column(name = "user_email")
 	private String user_email; // 邮箱
 	
-	@Column(name = "user_sex")
 	private String user_sex;// 性别
 	
-	@Column(name = "register_time")
 	private String register_time; // 创建时间
 	
-	@Column(name = "logincount")
-	private String logincount; // 登录次数
+	private int logincount; // 登录次数
 	
-	@Column(name = "lastlogintime")
 	private String lastlogintime;// 上一次登录时间
 	
-	@Column(name = "lastloginip")
 	private String lastloginip;// 上一次登录IP
 	
-	@Column(name = "islogin")
 	private boolean islogin; // 是否已经登录
 	
-	@Column(name = "presentstate")
 	private Boolean presentstate;// 当前账号状态（做审核、封号）
 	
-	@Column(name = "department_id")
 	private int department_id;//部门id
 	
 
@@ -115,10 +100,10 @@ public class Manager extends BaseEntity{
 	public void setRegister_time(String register_time) {
 		this.register_time = register_time;
 	}
-	public String getLogincount() {
+	public int getLogincount() {
 		return logincount;
 	}
-	public void setLogincount(String logincount) {
+	public void setLogincount(int logincount) {
 		this.logincount = logincount;
 	}
 	public String getLastlogintime() {
@@ -148,7 +133,7 @@ public class Manager extends BaseEntity{
 	
 	
 	public Manager(int id, String user_name, String login_account, String login_pass, String user_head,
-			String user_email, String user_sex, String register_time, String logincount, String lastlogintime,
+			String user_email, String user_sex, String register_time, int logincount, String lastlogintime,
 			String lastloginip, boolean islogin, Boolean presentstate, int[] roleid) {
 		super();
 		this.id = id;

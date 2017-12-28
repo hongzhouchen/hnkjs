@@ -34,7 +34,6 @@
 		</div>
 
 		<div class="layui-form-item">
-
 			<c:choose>
 				<c:when test="${resultMsg}==''">
 					<span style="color: red">${resultMsg}</span>
@@ -43,9 +42,7 @@
 					<span style="color: #1BC550">${resultMsg}</span>
 				</c:otherwise>
 			</c:choose>
-
 		</div>
-
 	</form>
 	<script>
 		layui.use('form', function() {
