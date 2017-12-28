@@ -8,7 +8,7 @@ import hnkjs.entities.Role;
 * @version: v1.0.0  
 * @Description: 角色管理服务
  */
-public interface IRoleManageServer extends IBaseServer<Role> {
+public interface IRole_AuthorityManageServer{
    
 	
 }
