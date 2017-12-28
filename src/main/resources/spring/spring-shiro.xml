@@ -65,8 +65,8 @@
 		<property name="filterChainDefinitions">
 			<value>
 			    <!-- 静态资源允许访问 -->  
-				/admin/index*=anon 
-				/login.jsp=authc
+				<!-- /admin/index*=anon 
+				/login.jsp=authc -->
 			</value>
 		</property>
 	</bean>
