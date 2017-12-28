@@ -58,7 +58,6 @@
 		       <span style="color:#1BC550">${resultMsg}</span>
 		  </c:otherwise>
 		  </c:choose>
-		  
 		</div>
 		
 	</form>
@@ -67,7 +66,6 @@
 		  var form = layui.form; //获取form模块
 		  //监听提交
 		  form.on('submit(addManagerForm)', function(data){
-		    
 		    return true;
 		  });
 		}
