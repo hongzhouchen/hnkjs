@@ -11,9 +11,7 @@
 </head>
 <body>
 	<blockquote class="layui-elem-quote layui-text">添加管理员</blockquote>
-	<form class="layui-form" id="addManagerForm" name="addManagerForm"
-		method="post"
-		action="${pageContext.request.contextPath }/admin/addManager.action">
+	<form class="layui-form" id="addManagerForm" name="addManagerForm">
 		<div class="layui-form-item">
 			<label class="layui-form-label">用户名:</label>
 			<div class="layui-input-block">
@@ -58,12 +56,37 @@
 			var form = layui.form; //获取form模块
 			//监听提交
 			form.on('submit(addManagerForm)', function(data) {
-                
+		            $.post('user_systemallot_insert.do', params, function (res) {
+		                if (res.status==1) {
+		                     layer.msg(res.message,{icon:1},function(index){
+		                     CloseWin();
+		                    }) 
+		                }else if(res.status==2){
+
+		                layer.msg(res.message,{icon:0},function(){
+
+		                parent.location.href='${path}/sys/toLogin';
+		                CloseWin();
+		                })
+		                }else{
+		                layer.msg(res.message,{icon:0},function(){
+		                location.reload();   //页面刷新
+		                     return false
+		                })
+		                } 
+
+		            }, 'json');
 				return false;
 			});
 		}
-
 		);
+		//关闭页面
+		function CloseWin(){
+		    parent.location.reload();  //父页面刷新
+		    var index = parent.layer.getFrameIndex(window.name);  //先得到当前iframe层的索引
+		    parent.layer.close(index);  //再执行关闭 
+		 }
+
 	</script>
 </body>
 </html>
