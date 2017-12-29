@@ -72,14 +72,13 @@
                     laydate = layui.laydate,
                     laypage = layui.laypage;
                 var nums = 10;
-                //调用分页
+                  //调用分页
                   laypage({
                     cont: 'paged'
                     ,pages: totalPageAllAppoint //得到总页数，在layui2.X中使用count替代了，并且不是使用"总页数"，而是"总记录条数"
                     ,curr: currentPageAllAppoint
                     ,skip: true
                     ,jump: function(obj, first){
-
                         currentPageAllAppoint = obj.curr;
                         startAllAppoint = (obj.curr-1)*limitAllAppoint;
                       //document.getElementById('biuuu_city_list').innerHTML = render(obj, obj.curr);

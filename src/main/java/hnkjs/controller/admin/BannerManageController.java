@@ -71,7 +71,7 @@ public class BannerManageController {
 
 	@RequestMapping("/updataBanner")
 	public String updataBanner(@RequestParam("bannerimg") MultipartFile[] mfs, Banner mBanner, ModelMap map)throws Exception {
-		String imgurl = ImgUploadUtils.OneImgUpLoad(mfs[0], ImgServcerConstant.hnkjsImgServer, ImgServcerConstant.truePicUrl, "BannerImg");
+		String imgurl = ImgUploadUtils.getInstant().OneImgUpLoad(mfs[0], ImgServcerConstant.hnkjsImgServer, ImgServcerConstant.truePicUrl, "BannerImg");
 		if (imgurl != null || imgurl != "") {
 			mBanner.setB_imgurl(imgurl);
 		}

@@ -40,7 +40,7 @@
 		#{presentstate},
 		#{register_time},
 		#{department_id}
-		) ;
+		);
 
 	</insert>
 

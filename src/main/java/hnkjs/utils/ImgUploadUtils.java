@@ -1,16 +1,14 @@
 package hnkjs.utils;
 
 import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Random;
 
 import org.springframework.web.multipart.MultipartFile;
 
 
 /**
- * 图片上传工具类
+ * 图片上传工具类,懒汉单例模式  
 * @author: Charles
 * @date: 2017年12月12日 上午10:19:10 
 * @version: v1.0.0  
@@ -18,6 +16,17 @@ import org.springframework.web.multipart.MultipartFile;
  */
 public class ImgUploadUtils {
     
+    private ImgUploadUtils(){};
+	
+	private static ImgUploadUtils mImgUploadUtils=null;
+	
+	public static synchronized  ImgUploadUtils getInstant(){
+		if(mImgUploadUtils==null){
+			mImgUploadUtils=new ImgUploadUtils();
+		}
+		return mImgUploadUtils;
+	}
+	
 	
     /** 
 	 * 上传一张图片，格式必须是GIF,PNG,JPG之一
@@ -29,7 +38,7 @@ public class ImgUploadUtils {
      * @return 返回 该图片所在的虚拟路径
      * @throws Exception
      */
-	public static String OneImgUpLoad(MultipartFile mfile,String hnkjsImgServer,String truePicUrl,String dir)throws Exception{
+	public  String OneImgUpLoad(MultipartFile mfile,String hnkjsImgServer,String truePicUrl,String dir)throws Exception{
 		//1、将文件写入到图片服务器   2、修改图片的名字  3、返回 图片的存储路径
 		if(mfile!=null){
 			String fileName = mfile.getOriginalFilename();// 文件原名称

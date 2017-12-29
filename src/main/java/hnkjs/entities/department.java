@@ -67,6 +67,14 @@ public class Department extends  BaseEntity {
 	public void setCreate_time(String create_time) {
 		this.create_time = create_time;
 	}
+	
+	@Override
+	public String toString() {
+		return "Department [id=" + id + ", department_key=" + department_key + ", department_value=" + department_value
+				+ ", parent_departmentkey_id=" + parent_departmentkey_id + ", description=" + description
+				+ ", create_time=" + create_time + "]";
+	}
     
+	
 	
 }
