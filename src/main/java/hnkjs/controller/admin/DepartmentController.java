@@ -3,6 +3,7 @@ package hnkjs.controller.admin;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -31,6 +32,13 @@ public class DepartmentController extends BaseController {
 	    
 		return "";
 	}
+	@RequestMapping("departmentPage")
+	public String departmentPage(ModelMap map){
+		//获取
+		return "";
+	}
+	
+	
 	
 	@RequestMapping("addDepartment")
 	public String addDepartment(Department mDepartment) throws Exception {
