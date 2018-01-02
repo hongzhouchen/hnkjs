@@ -15,12 +15,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import hnkjs.entities.Manager;
-import hnkjs.entities.PageBean;
 import hnkjs.service.IManagerService;
 
 @RequestMapping("admin")
@@ -147,13 +145,13 @@ public class UserManageController {
 
 	/**
 	 * 修改管理员信息
-	 * 
 	 * @param mManager
 	 * @return
 	 */
 	@ResponseBody
 	@RequestMapping("modifyManager")
 	public String modifyManager(Manager mManager) {
+		
 		return "";
 	}
 
