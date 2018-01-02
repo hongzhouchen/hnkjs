@@ -16,7 +16,6 @@
 <link rel="stylesheet" href="css/admin/login-style.css">
 </head>
 <body>
-
 	<div class="bg"></div>
 	<div class="container">
 		<div class="line bouncein">
@@ -55,59 +54,21 @@
 							</div>
 						</div>
 						<div style="padding: 30px;">
-							<input type="button" id="button"
-								class="button button-block bg-main text-big input-big"
-								value="登录">
+							<input type="button" id="loginbtn" class="button button-block bg-main text-big input-big" value="登录">
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	<!-- <form id="loginform" name="loginform" method="post"
-		action="admin/addDepartment.action">
-		<div class="layui-form-item">
-			<label class="layui-form-label">用户名：</label>
-			<div class="layui-input-block">
-				<input type="text" name="username" lay-verify="title"
-					autocomplete="off" placeholder="邮箱/账号" class="layui-input">
-			</div>
-		</div>
-		<div class="layui-form-item">
-			<label class="layui-form-label">密码：</label>
-			<div class="layui-input-block">
-				<input type="text" name="password" lay-verify="required"
-					placeholder="密码长度为5~15位" autocomplete="off" class="layui-input">
-			</div>
-		</div>
-
-		<div class="layui-form-item">
-			<div class="layui-input-block">
-				<button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
-			</div>
-		</div>
-	</form>
-	<script>
-		layui.use('form', function() {
-			var form = layui.form; //获取form模块
-			//监听提交
-			form.on('submit(loginform)', function(data) {
-				layer.msg(1234);
-				return false;
-			});
-		});
-	</script> -->
+<script type="text/javascript">
+   function $(id){
+	   return
+   }
+   window.onload=function(){
+	  
+	   
+   }
+</script>
 </body>
 </html>
