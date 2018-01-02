@@ -18,9 +18,6 @@
 </head>
 <body>
 	<blockquote class="layui-elem-quote layui-text">添加管理員</blockquote>
-
-
-
 	<form id="loginform" name="loginform" method="post"
 		action="admin/addDepartment.action">
 		<div class="layui-form-item">
@@ -34,11 +31,11 @@
 			<label class="layui-form-label">部门名称：</label>
 			<div class="layui-input-block">
 				<input type="text" name="department_value" lay-verify="required"
-					placeholder="密码长度为5~15位" autocomplete="off" class="layui-input">
+					placeholder="部门名称" autocomplete="off" class="layui-input">
 			</div>
 		</div>
 		<div class="layui-form-item">
-			<label class="layui-form-label">上级部门的ID：</label>
+			<label class="layui-form-label">上级部门:</label>
 			<div class="layui-input-block">
 				<input type="text" name="parent_departmentkey_id"
 					lay-verify="required" placeholder="密码长度为5~15位" autocomplete="off"
