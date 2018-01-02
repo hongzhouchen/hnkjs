@@ -46,6 +46,7 @@ public class DepartmentController extends BaseController {
 		if (mDepartment != null) {
 			// 设置部门添加时间创建
 			mDepartment.setCreate_time(CurrentTimeUtils.getInstant().getCurrentTime("yyyy-MM-dd"));
+			
 			int save = mIDepartmentServer.save(mDepartment);
 		}
 			
