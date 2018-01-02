@@ -15,12 +15,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import hnkjs.entities.Manager;
-import hnkjs.entities.PageBean;
 import hnkjs.service.IManagerService;
 import hnkjs.utils.CurrentTimeUtils;
 
@@ -56,7 +54,7 @@ public class UserManageController {
 				subject.login(usernamePasswordToken);
 			}
 		}else{
-			map.addAttribute("result",  "账号密码不能为空！");
+			map.addAttribute("resultMsg","账号密码不能为空！");
         	return "admin/login";
 		}
 		return "admin/index";
@@ -134,13 +132,13 @@ public class UserManageController {
 
 	/**
 	 * 修改管理员信息
-	 * 
 	 * @param mManager
 	 * @return
 	 */
 	@ResponseBody
 	@RequestMapping("modifyManager")
 	public String modifyManager(Manager mManager) {
+		
 		return "";
 	}
 
