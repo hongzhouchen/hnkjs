@@ -54,16 +54,16 @@
 						<div style="padding:10px 30px;">
 							<input type="button" id="loginbtn" class="button button-block bg-main text-big input-big" value="登录">
 						</div>
-						<div style="padding:  0px 30px">123</div>
+						<div style="padding: 0px 30px;color:red; display: none" id="errmsg">123</div>
 					</div>
 				</form>
 			</div>
-		</div>
+		</div> 
 	</div>
 	<script src="js/jquery.min.js"></script>
 <script type="text/javascript">
    $(documcent).ready(function(){
-	   $("#loginbtn").
+	   var msg=document.getElementById("errmsg");
 	   
    })
 </script>

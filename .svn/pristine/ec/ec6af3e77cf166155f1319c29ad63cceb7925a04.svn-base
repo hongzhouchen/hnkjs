@@ -1,0 +1,11 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+.container{
+	width: 1100px;
+	margin:10px auto;
+}
+.row{
+	margin: 20px;
+}

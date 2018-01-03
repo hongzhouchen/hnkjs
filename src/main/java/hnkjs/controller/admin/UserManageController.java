@@ -55,7 +55,7 @@ public class UserManageController {
 				subject.login(usernamePasswordToken);
 			}
 		}else{
-			map.addAttribute("resultMsg","账号密码不能为空！");
+			map.addAttribute("resultMsg",MessageStateConstant.AccountOrPasswordIsEmpty.getStateCode()+":"+MessageStateConstant.AccountOrPasswordIsEmpty.getMsg());
         	return "admin/login";
 		}
 		return "admin/index";
