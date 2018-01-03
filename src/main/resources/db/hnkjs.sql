@@ -39,6 +39,24 @@ CREATE TABLE `sys_department` (
   UNIQUE KEY `uk_sys_department_department_key` (`department_key`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='部门表';
 
+INSERT INTO `hnkjs`.`sys_department` 
+	(
+	`department_key`, 
+	`department_value`, 
+	`parent_departmentkey_id`, 
+	`description`, 
+	`create_time`
+	)
+	VALUES
+	(
+	'hnkjs-01', 
+	'信息系统部', 
+	'-1', 
+	'信息系统部为公司提供信息技术服务', 
+	'2016-4-30'
+	);
+
+
 /*菜单表*/
 DROP TABLE IF EXISTS `sys_authority`;
 CREATE TABLE `sys_authority` (
