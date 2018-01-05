@@ -46,26 +46,36 @@
 							<div class="form-group">
 								<div class="field">
 									<input type="text" class="input input-big" name="code"
-										placeholder="填写右侧的验证码" />
-										<img src="img/login/passcode.jpg" alt="" width="100" height="32" class="passcode" style="height: 43px; cursor: pointer;" onClick="this.src=this.src+'?'">
+										placeholder="填写右侧的验证码" /> <img src="img/login/passcode.jpg"
+										alt="" width="100" height="32" class="passcode"
+										style="height: 43px; cursor: pointer;"
+										onClick="this.src=this.src+'?'">
 								</div>
 							</div>
 						</div>
-						<div style="padding:10px 30px;">
-							<input type="button" id="loginbtn" class="button button-block bg-main text-big input-big" value="登录">
+						<div style="padding: 10px 30px;">
+							<input type="button" id="loginbtn"
+								class="button button-block bg-main text-big input-big"
+								value="登录">
 						</div>
-						<div style="padding: 0px 30px;color:red; display: none" id="errmsg">123</div>
+						<c:if test="${resultMsg!=null}">
+							<div style="padding: 0px 30px; color: red; display: none" id="errmsg">${resultMsg}</div>
+						</c:if>
+
 					</div>
 				</form>
 			</div>
-		</div> 
+		</div>
 	</div>
 	<script src="js/jquery.min.js"></script>
-<script type="text/javascript">
-   $(documcent).ready(function(){
-	   var msg=document.getElementById("errmsg");
-	   
-   })
-</script>
+	<script type="text/javascript">
+		$(documcent).ready(function() {
+			
+			$("#loginbtn").addEventListener("click", function(e) {
+				
+			}, true);
+			
+		})
+	</script>
 </body>
 </html>
