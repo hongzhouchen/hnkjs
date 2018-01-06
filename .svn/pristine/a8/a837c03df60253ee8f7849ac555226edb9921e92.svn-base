@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="hnkjs.mapper.ManagerMapper">
+	<delete id="deleteManagerById" parameterType="int">
+		DELETE
+		FROM
+		`hnkjs`.`sys_user`
+		WHERE `user_id` = #{id};
+	</delete>
+
+	<insert id="addManager" parameterType="hnkjs.entities.Manager">
+		INSERT INTO
+		`hnkjs`.`sys_user` (
+		`login_account`,
+		`login_pass`,
+		`user_name`,
+		`user_head`,
+		`user_email`,
+		`user_sex`,
+		`login_count`,
+		`last_logintime`,
+		`last_loginip`,
+		`islogin`,
+		`presentstate`,
+		`register_time`,
+		`department_id`
+		)
+		VALUES
+		(
+		#{login_account},
+		#{login_pass},
+		#{user_name},
+		#{user_head},
+		#{user_email},
+		#{user_sex},
+		#{login_count},
+		#{last_logintime},
+		#{last_loginip},
+		#{islogin},
+		#{presentstate},
+		#{register_time},
+		#{department_id}
+		);
+
+	</insert>
+
+</mapper>
