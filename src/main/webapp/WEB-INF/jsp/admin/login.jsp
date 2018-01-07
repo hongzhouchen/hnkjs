@@ -22,7 +22,7 @@
 			<div class="xs6 xm4 xs3-move xm4-move">
 				<div style="height: 150px;"></div>
 				<div class="media media-y margin-big-bottom"></div>
-				<form action="index.html" method="post">
+				<form action="admin/login.action" method="post" >
 					<div class="panel loginbox">
 						<div class="text-center margin-big padding-big-top">
 							<h1>后台登录</h1>
@@ -31,7 +31,7 @@
 							style="padding: 30px; padding-bottom: 10px; padding-top: 10px;">
 							<div class="form-group">
 								<div class="field field-icon-right">
-									<input type="text" class="input input-big" name="name"
+									<input type="text" class="input input-big" name="loginName"
 										id="username" placeholder="登录账号" /> <span
 										class="icon icon-user margin-small"></span>
 								</div>
@@ -54,28 +54,24 @@
 							</div>
 						</div>
 						<div style="padding: 10px 30px;">
-							<input type="button" id="loginbtn"
+							<input type="submit" id="loginbtn"
 								class="button button-block bg-main text-big input-big"
 								value="登录">
 						</div>
 						<c:if test="${resultMsg!=null}">
-							<div style="padding: 0px 30px; color: red; display: none" id="errmsg">${resultMsg}</div>
+							<div style="padding: 0px 30px; color: red; display: block;" id="errmsg">${resultMsg}</div>
 						</c:if>
-
 					</div>
 				</form>
 			</div>
 		 </div>
 	</div>
-	<script src="js/jquery.min.js"></script>
+	<!-- <script src="js/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(documcent).ready(function() {
-			
-			$("#loginbtn").addEventListener("click", function(e) {
-				
-			}, true);
+		
 			
 		})
-	</script>
+	</script> -->
 </body>
 </html>

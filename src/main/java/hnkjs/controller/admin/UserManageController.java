@@ -46,20 +46,22 @@ public class UserManageController {
 	 */
 	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public String login(String loginName, String password,ModelMap map) {
-		if (loginName.isEmpty() && password.isEmpty()){
-			Subject subject = SecurityUtils.getSubject();
-			if (!subject.isAuthenticated()) {// 如果没有被认证(登录)
+		if (loginName!="" && password !=""){
+			//Subject subject = SecurityUtils.getSubject();
+			/*if (!subject.isAuthenticated()) {// 如果没有被认证(登录)
 				UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(loginName, password);
 				// 记住我
 				usernamePasswordToken.setRememberMe(true);
 				subject.login(usernamePasswordToken);
-			}
+				
+			}*/
+			
 		}else{
 			map.addAttribute("resultMsg",MessageStateConstant.AccountOrPasswordIsEmpty.getStateCode()+":"+MessageStateConstant.AccountOrPasswordIsEmpty.getMsg());
         	return "admin/login";
 		}
-		return "admin/index";
 		
+		return "admin/index";
 	}
 
 	/**

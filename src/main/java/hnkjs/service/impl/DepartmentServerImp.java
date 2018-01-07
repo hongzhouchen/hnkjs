@@ -21,11 +21,6 @@ public class DepartmentServerImp implements IDepartmentServer {
 		return mDepaertmentMapper.getEntity(id);
 	}
 	
-	@Override
-	public Department getEntity(String str) {
-		// TODO Auto-generated method stub
-		return mDepaertmentMapper.getEntity(str);
-	}
 
 	@Override
 	public List<Department> getEntities(String str) throws Exception {
@@ -69,5 +64,22 @@ public class DepartmentServerImp implements IDepartmentServer {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+	@Override
+	public Department getEntity(String str) {
+		
+		return mDepaertmentMapper.getEntityByname(str);
+	}
+
+
+	@Override
+	public List<Department> getEntities() throws Exception {
+		// TODO Auto-generated method stub
+		return  mDepaertmentMapper.getEntity();
+		
+	}
+
+	
 
 }
