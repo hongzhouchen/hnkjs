@@ -53,6 +53,9 @@ public class ImgUploadUtils {
 					String typeName = fileName.substring(fileName.length() - 4, fileName.length());
 					//自定义的图片名称
 					String newImgName =new SimpleDateFormat("yyyyMMddhhmmss").format(new Date())+"_"+(int)(Math.random()*100)+typeName;
+					
+					
+					
 					//项目在容器中实际发布运行的根路径
 					String truePath=truePicUrl +dir+ImgServcerConstant.separator+newImgName;
 					//转存文件到指定的路径
