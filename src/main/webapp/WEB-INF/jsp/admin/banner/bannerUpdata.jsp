@@ -3,7 +3,7 @@
 
 <html>
 <body>
-	<form class="layui-form" action="updataBanner.action" enctype="multipart/form-data" method="post">
+	<form class="layui-form" action="admin/updataBanner.action" enctype="multipart/form-data" method="post">
 		
 		<input type="hidden" value="${banner.id}" name="id"/>
 		<div class="layui-form-item">

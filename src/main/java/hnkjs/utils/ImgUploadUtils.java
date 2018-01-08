@@ -6,6 +6,8 @@ import java.util.Date;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import hnkjs.constant.ImgServcerConstant;
+
 
 /**
  * 图片上传工具类,懒汉单例模式  
@@ -52,7 +54,7 @@ public class ImgUploadUtils {
 					//自定义的图片名称
 					String newImgName =new SimpleDateFormat("yyyyMMddhhmmss").format(new Date())+"_"+(int)(Math.random()*100)+typeName;
 					//项目在容器中实际发布运行的根路径
-					String truePath=truePicUrl +dir+ newImgName;
+					String truePath=truePicUrl +dir+ImgServcerConstant.separator+newImgName;
 					//转存文件到指定的路径
 					mfile.transferTo(new File(truePath));
 					return hnkjsImgServer+newImgName;
