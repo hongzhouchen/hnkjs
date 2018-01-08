@@ -9,8 +9,9 @@ public class ShiroRealm extends AuthenticatingRealm {
 
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-		System.out.println("dayin:::"+token);
-		return null;
+		System.out.println("doGetAuthenticationInfo被执行:::"+token);
+		AuthenticationInfo  a=(AuthenticationInfo) token.getPrincipal();
+		return a;
 	}
 
 }

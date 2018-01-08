@@ -14,11 +14,17 @@ public interface  BaseDao<T> {
 	public T getEntity(int id);
 	
 	/**
+	 * 获取一个实体集合，无参数
+	 * @return
+	 */
+	public	List<T> getEntity();
+	
+	/**
 	 * 根据一个字符串获取实体
 	 * @param str  必须保证该str 唯一
 	 * @return
 	 */
-	public	T getEntity(String str);
+	public	T getEntityByname(String str);
 	
 	/**
 	 * 根据一个字符串获取一个集合，查询出来的数据可能有多条

@@ -35,6 +35,14 @@ public interface IBaseServer<T extends BaseEntity> {
 	public	T getEntity(String str);
 	
 	/**
+	 * 获取所有的实体
+	 * @return
+	 * @throws Exception
+	 */
+	public List<T> getEntities() throws Exception;
+	
+	
+	/**
 	 * 根据一个字符串获取一个集合，查询出来的数据可能有多条
 	 * 可用于查找 某字段相同的实体
 	 * 不分页
