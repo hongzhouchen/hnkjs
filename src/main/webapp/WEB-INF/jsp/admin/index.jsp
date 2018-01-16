@@ -50,7 +50,7 @@
 		<div class="layui-side layui-bg-black">
 			<div class="layui-side-scroll">
 				<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-				<ul class="layui-nav layui-nav-tree" lay-filter="test">
+				<ul class="layui-nav layui-nav-tree" lay-filter="leftmenu">
 					<li class="layui-nav-item layui-nav-itemed"><a class=""
 						href="javascript:;">系统设置</a> <i class="fa fa-plug"
 						aria-hidden="true"></i>
@@ -108,32 +108,21 @@
 								<a href="javascript:;">权限管理</a>
 							</dd>
 						</dl></li>
-					<li class="layui-nav-item"><a href="">数据统计</a></li>
+					<li class="layui-nav-item"><a href="" data-url="www.baidu.com">数据统计</a></li>
 				</ul>
 			</div>
 		</div>
 
 		<div class="layui-body" id="container">
 			<!-- 内容主体区域 -->
-			<div class="layui-tab layui-tab-card kit-tab" lay-filter="kitTab">
+			<div class="layui-tab layui-tab-card kit-tab" lay-filter="contentTab">
 				<ul class="layui-tab-title">
 					<li class="" lay-id="-1"><i class="layui-icon"></i> 控制面板</li>
 				</ul>
-				<div class="kit-tab-tool"> 操作&nbsp;<i class="fa fa-caret-down"></i>
-				</div>
-				<div class="kit-tab-tool-body layui-anim layui-anim-upbit" style="display: none;">
-					<ul>
-						<li class="kit-item" data-target="refresh">刷新当前选项卡</li>
-						<li class="kit-line"></li>
-						<li class="kit-item" data-target="closeCurrent">关闭当前选项卡</li>
-						<li class="kit-item" data-target="closeOther">关闭其他选项卡</li>
-						<li class="kit-line"></li>
-						<li class="kit-item" data-target="closeAll">关闭所有选项卡</li>
-					</ul>
 				</div>
 				<div class="layui-tab-content">
 					<div class="layui-tab-item" lay-item-id="-1">
-						<iframe src="main.html" style="height: 169px;"></iframe>
+						<iframe  src="main.html" style="height: 169px;"></iframe>
 					</div>
 				</div>
 			</div>
@@ -150,7 +139,10 @@
 		//JavaScript代码区域
 		layui.use('element', function() {
 			var element = layui.element;
-            
+            element.on("tab(leftmenu)",function(data){
+            	alert(data);
+            	alert(data.index);
+            });
 		});
 	</script>
 </body>
