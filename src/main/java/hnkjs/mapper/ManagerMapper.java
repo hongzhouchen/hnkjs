@@ -11,7 +11,7 @@ import hnkjs.entities.Manager;
 * @version: v1.0.0  
 * @Description: 该函数的功能描述
  */
-public interface ManagerMapper extends BaseDao<Manager> {
+public interface ManagerMapper {
 
 	/**
 	 * 添加一个后台管理员

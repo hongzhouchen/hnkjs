@@ -19,6 +19,7 @@
 		<ehcache.version>2.6.11</ehcache.version>
 		<ehcache-web.version>2.0.4</ehcache-web.version>
 		<commons-logging.version>1.2</commons-logging.version>
+
 	</properties>
 
 	<dependencies>
@@ -169,27 +170,24 @@
 		</dependency>
 
 		<!-- shiro权限 -->
-	
-        <!-- CACHE begin -->
+
+		<!-- CACHE begin -->
 		<dependency>
 			<groupId>net.sf.ehcache</groupId>
 			<artifactId>ehcache-core</artifactId>
 			<version>${ehcache.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>net.sf.ehcache</groupId>  
-			<artifactId>ehcache-web</artifactId>  
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache-web</artifactId>
 			<version>${ehcache-web.version}</version>
 		</dependency>
-		
-		<!-- <dependency>
-			<groupId>redis.clients</groupId>
-			<artifactId>jedis</artifactId>
-			 <version>2.5.1</version>
-		</dependency> -->
+
+		<!-- <dependency> <groupId>redis.clients</groupId> <artifactId>jedis</artifactId> 
+			<version>2.5.1</version> </dependency> -->
 		<!-- CACHE end -->
 
-        <!-- SECURITY begin -->
+		<!-- SECURITY begin -->
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-core</artifactId>
@@ -233,6 +231,12 @@
 			<version>${commons-logging.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
 
 
 	</dependencies>
