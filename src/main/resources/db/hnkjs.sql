@@ -122,12 +122,12 @@ CREATE TABLE `sys_user` (
   `login_count` VARCHAR(30) DEFAULT NULL COMMENT '登录次数',
   `last_logintime` VARCHAR(30)  DEFAULT NULL COMMENT '上一次登录时间',
   `last_loginip`  VARCHAR(30)  DEFAULT NULL COMMENT '上一次登录ip',
-  `islogin`   BIT  DEFAULT NULL COMMENT '是否已经登录（0，未登录，1已经登录）',
-  `presentstate`  BIT  DEFAULT NULL COMMENT '账号状态',
-  `register_time` VARCHAR(30) NOT NULL COMMENT '注册时间',
+  `islogin`   TINYINT(1)  DEFAULT NULL COMMENT '是否已经登录（0，未登录，1已经登录）',
+  `presentstate`  TINYINT(1)  DEFAULT NULL COMMENT '账号状态',
+  `register_time` VARCHAR(30)  DEFAULT NULL COMMENT '注册时间',
   `department_id` INT(11) DEFAULT NULL COMMENT '部门id',
   PRIMARY KEY (`user_id`),
-  UNIQUE KEY `uk_sys_user_login_account` (`login_account`)
+  UNIQUE KEY `uk_sys_user_login_account` (`login_account`) 
 ) ENGINE=INNODB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 
@@ -159,4 +159,5 @@ a_explain VARCHAR(200)  COMMENT '文章描述 (可为空，一般是文章的前
 content BLOB  COMMENT '文章内容 ',
 bannerurl VARCHAR(100) COMMENT '文章外面展示的图片'
 )ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='cms 文章表';;
+
 

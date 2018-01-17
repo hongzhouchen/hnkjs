@@ -43,7 +43,7 @@ public class Manager extends BaseEntity{
 	
 	private String lastloginip;// 上一次登录IP
 	
-	private boolean islogin; // 是否已经登录
+	private boolean islogin; //是否已经登录
 	
 	private Boolean presentstate;// 当前账号状态（做审核、封号）
 	

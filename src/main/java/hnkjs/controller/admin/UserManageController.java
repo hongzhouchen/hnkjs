@@ -2,6 +2,7 @@ package hnkjs.controller.admin;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -18,10 +19,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import hnkjs.constant.ImgServcerConstant;
 import hnkjs.constant.MessageStateConstant;
+import hnkjs.entities.Department;
 import hnkjs.entities.Manager;
+import hnkjs.service.IDepartmentServer;
 import hnkjs.service.IManagerService;
 import hnkjs.utils.CurrentTimeUtils;
+import net.sf.json.JSONObject;
 
 @RequestMapping("admin")
 @Controller
@@ -29,6 +34,8 @@ public class UserManageController {
 
 	@Autowired
 	private IManagerService mIManagerService;
+	@Autowired
+	private IDepartmentServer mIDepartmentServer;
 
 	private static Log log = LogFactory.getLog(UserManageController.class);
     
@@ -53,7 +60,6 @@ public class UserManageController {
 				// 记住我
 				usernamePasswordToken.setRememberMe(true);
 				subject.login(usernamePasswordToken);
-				
 			}*/
 			
 		}else{
@@ -62,6 +68,46 @@ public class UserManageController {
 		}
 		
 		return "admin/index";
+	} 
+
+	
+
+	/**
+	 * 添加管理员的界面
+	 * @return
+	 */
+	@RequestMapping(value = "addManagerPage")
+	public String addManager(ModelMap map) {
+		//获取部门数据
+		map.addAttribute("title", "添加管理员");
+		map.addAttribute("resultMsg", "");
+		return "admin/manager/addManager";
+	}
+
+	/**
+	 * 添加管理员
+	 * @param mManager
+	 * @return 
+	 * @throws Exception
+	 */
+	@ResponseBody
+	@RequestMapping("addManager")
+	public String addManager(Manager mManager) throws Exception {
+		int resultState = 0;
+		if (mManager != null) {
+			// 設置登录状态为false
+			mManager.setIslogin(false);
+			// 设置注册时间
+			mManager.setRegister_time(CurrentTimeUtils.getInstant().getCurrentTime("yyyy-MM-dd"));
+			// 设置当前账号状态（false则不可以登录）
+			mManager.setPresentstate(true);
+			//设置默认头像
+			mManager.setUser_head(ImgServcerConstant.sysHeadImg+"sysHead.jsp");
+			
+			resultState = mIManagerService.addManager(mManager);
+		}
+		// 返回状态码
+		return  "result:" + resultState;
 	}
 
 	/**
@@ -84,44 +130,7 @@ public class UserManageController {
 			}
 		}
 	}
-
-	/**
-	 * 添加管理员的界面
-	 * 
-	 * @return
-	 */
-	@RequestMapping(value = "addManagerPage")
-	public String addManager(ModelMap map) {
-		map.addAttribute("title", "添加管理员");
-		map.addAttribute("resultMsg", "");
-		return "admin/manager/addManager";
-	}
-
-	/**
-	 * 添加管理员
-	 * @param mManager
-	 * @return 
-	 * @throws Exception
-	 */
-	@ResponseBody
-	@RequestMapping("addManager")
-	public String addManager(Manager mManager) throws Exception {
-		int resultState = 0;
-		if (mManager != null) {
-			// 設置登录状态为false
-			mManager.setIslogin(false);
-			// 设置注册时间
-			mManager.setRegister_time(CurrentTimeUtils.getInstant().getCurrentTime("yyyy-MM-dd"));
-			// 设置登录次数
-			mManager.setLogincount(0);
-			// 设置当前账号状态（false则不可以登录）
-			mManager.setPresentstate(false);
-			resultState = mIManagerService.addManager(mManager);
-		}
-		// 返回状态码
-		return  "result:" + resultState;
-	}
-
+	
 	/**
 	 * 修改密码
 	 */
@@ -143,7 +152,36 @@ public class UserManageController {
 		
 		return "";
 	}
-
+    
+	@RequestMapping("manager")
+	public String  managerList(ModelMap map) throws Exception{
+		map.addAttribute("title", "管理员列表");
+		List<Department> departments = mIDepartmentServer.getEntities();
+		map.addAttribute("departments", departments);
+		return "admin/manager/managerList";
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping("managerList")
+	public String  getmanagerListbyPage(int page,int limit) throws Exception{
+		
+		 List<Manager> entities = mIManagerService.queryAllManage(page, limit, true);
+		 
+		 JSONObject json=new JSONObject();
+		 json.put("code", 0);
+		 json.put("code", 0);
+		 if(entities.size()>0){
+			 json.put("msg", "success");
+		 }else{
+			 json.put("msg", "");
+		 }
+		 json.put("count", entities.size());
+		 json.put("data", entities);
+ 		return  json.toString();
+	}
+	
+	
 	/**
 	 * 删除管理员 硬删除
 	 * 
@@ -153,7 +191,7 @@ public class UserManageController {
 	 * @throws Exception
 	 */
 	@ResponseBody
-	@RequestMapping("modifyManager/{id}")
+	@RequestMapping("deleteManager/{id}")
 	public String deleteManager(@PathVariable int id) throws Exception {
 		int resultState = 0;
 		if (id > 0) {

@@ -17,7 +17,7 @@
 		`user_head`,
 		`user_email`,
 		`user_sex`,
-		`login_count`,
+		`logincount`,
 		`last_logintime`,
 		`last_loginip`,
 		`islogin`,
@@ -33,7 +33,7 @@
 		#{user_head},
 		#{user_email},
 		#{user_sex},
-		#{login_count},
+		#{logincount},
 		#{last_logintime},
 		#{last_loginip},
 		#{islogin},
@@ -43,5 +43,29 @@
 		);
 
 	</insert>
+
+	<select id="queryAllManage" resultType="hnkjs.entities.Manager">
+		SELECT
+		`user_id`,
+		`login_account`,
+		`login_pass`,
+		`user_name`,
+		`user_head`,
+		`user_email`,
+		`user_sex`,
+		`logincount`,
+		`last_logintime`,
+		`last_loginip`,
+		`islogin`,
+		`presentstate`,
+		`register_time`,
+		`department_id`
+		FROM
+		`hnkjs`.`sys_user`
+		Where  presentstate=#{presentstate}
+		LIMIT #{pageIndex}, #{pageSize};
+	</select>
+
+
 
 </mapper>

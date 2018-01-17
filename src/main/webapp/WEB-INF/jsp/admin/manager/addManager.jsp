@@ -6,27 +6,40 @@
 </head>
 <body>
 	<blockquote class="layui-elem-quote layui-text">添加管理员</blockquote>
+	
 	<form class="layui-form" id="addManagerForm" name="addManagerForm">
 		<div class="layui-form-item">
 			<label class="layui-form-label">用户名:</label>
 			<div class="layui-input-block">
 				<input type="text" name="user_name" lay-verify="required"
-					autocomplete="off" placeholder="邮箱/账号" class="layui-input">
+					autocomplete="off" placeholder="您在系统的名称" class="layui-input">
 			</div>
 			<label class="layui-form-label">登录名:</label>
 			<div class="layui-input-block">
 				<input type="text" name="login_account" lay-verify="required"
-					autocomplete="off" placeholder="邮箱/账号" class="layui-input">
+					autocomplete="off" placeholder="用于登录的账号" class="layui-input">
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">密码：</label>
 			<div class="layui-input-block">
 				<input type="password" name="login_pass" lay-verify="required"
-					placeholder="密码长度为5~15位,默认密码为 888888" autocomplete="off"
-					class="layui-input" value="888888">
+					placeholder="密码长度为5~15位,默认密码为 888888" autocomplete="off" class="layui-input" value="888888">
 			</div>
 		</div>
+		<!--选择部门-->
+		<div class="layui-form-item">
+		  <label class="layui-form-label">部门设置</label>
+		  <div class="layui-input-block">
+			<select name="department_id" id="department_id">
+			   <c:forEach var="item" items="${departments}">
+			      <option value="${item.id}">${item.department_value}</option>
+			   </c:forEach>
+			</select>
+		</div>
+		</div>
+		
+		<!--提交按钮  -->
 		<div class="layui-form-item">
 			<div class="layui-input-block">
 				<button class="layui-btn" lay-filter="">立即提交</button>

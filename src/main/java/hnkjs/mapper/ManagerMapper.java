@@ -2,6 +2,8 @@ package hnkjs.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import hnkjs.entities.Manager;
 
 /**
@@ -80,7 +82,7 @@ public interface ManagerMapper {
 	 * @return 集合
 	 * @throws Exception
 	 */
-	public List<Manager> queryAllManage(int pageIndex, int pageSize, boolean presentstate) throws Exception;
+	public List<Manager> queryAllManage(@Param("pageIndex")int pageIndex, @Param("pageSize")int pageSize, @Param("presentstate")boolean presentstate) throws Exception;
 
 	/**
 	 * 根据ID 恢复 管理员账号
