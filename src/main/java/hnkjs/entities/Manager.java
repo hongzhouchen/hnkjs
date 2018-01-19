@@ -37,11 +37,11 @@ public class Manager extends BaseEntity{
 	
 	private String register_time; // 创建时间
 	
-	private int logincount; // 登录次数
+	private int login_count; // 登录次数
 	
-	private String lastlogintime;// 上一次登录时间
+	private String last_logintime;// 上一次登录时间
 	
-	private String lastloginip;// 上一次登录IP
+	private String last_loginip;// 上一次登录IP
 	
 	private boolean islogin; //是否已经登录
 	
@@ -106,24 +106,6 @@ public class Manager extends BaseEntity{
 	public void setRegister_time(String register_time) {
 		this.register_time = register_time;
 	}
-	public int getLogincount() {
-		return logincount;
-	}
-	public void setLogincount(int logincount) {
-		this.logincount = logincount;
-	}
-	public String getLastlogintime() {
-		return lastlogintime;
-	}
-	public void setLastlogintime(String lastlogintime) {
-		this.lastlogintime = lastlogintime;
-	}
-	public String getLastloginip() {
-		return lastloginip;
-	}
-	public void setLastloginip(String lastloginip) {
-		this.lastloginip = lastloginip;
-	}
 	public boolean getIslogin() {
 		return islogin;
 	}
@@ -150,9 +132,9 @@ public class Manager extends BaseEntity{
 		this.user_email = user_email;
 		this.user_sex = user_sex;
 		this.register_time = register_time;
-		this.logincount = logincount;
-		this.lastlogintime = lastlogintime;
-		this.lastloginip = lastloginip;
+		this.login_count = logincount;
+		this.last_logintime = lastlogintime;
+		this.last_loginip = lastloginip;
 		this.islogin = islogin;
 		this.presentstate = presentstate;
 	}
@@ -162,9 +144,39 @@ public class Manager extends BaseEntity{
 	public String toString() {
 		return "Manager [id=" + id + ", user_name=" + user_name + ", login_account=" + login_account + ", login_pass="
 				+ login_pass + ", user_head=" + user_head + ", user_email=" + user_email + ", user_sex=" + user_sex
-				+ ", register_time=" + register_time + ", logincount=" + logincount + ", lastlogintime=" + lastlogintime
-				+ ", lastloginip=" + lastloginip + ", islogin=" + islogin + ", presentstate=" + presentstate
+				+ ", register_time=" + register_time + ", logincount=" + login_count + ", lastlogintime=" + last_logintime
+				+ ", lastloginip=" + last_loginip + ", islogin=" + islogin + ", presentstate=" + presentstate
 				+ ", department_id=" + department_id + "]";
+	}
+
+
+	public String getLast_loginip() {
+		return last_loginip;
+	}
+
+
+	public void setLast_loginip(String last_loginip) {
+		this.last_loginip = last_loginip;
+	}
+
+
+	public String getLast_logintime() {
+		return last_logintime;
+	}
+
+
+	public void setLast_logintime(String last_logintime) {
+		this.last_logintime = last_logintime;
+	}
+
+
+	public int getLogin_count() {
+		return login_count;
+	}
+
+
+	public void setLogin_count(int login_count) {
+		this.login_count = login_count;
 	}
 
 	

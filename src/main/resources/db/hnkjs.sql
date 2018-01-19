@@ -116,7 +116,7 @@ CREATE TABLE `sys_user` (
   `login_account` VARCHAR(30) NOT NULL COMMENT '登录账号',
   `login_pass` VARCHAR(65) NOT NULL COMMENT '登录密码',
   `user_name` VARCHAR(20) DEFAULT NULL COMMENT '昵称',
-  `user_head` VARCHAR(30) DEFAULT NULL COMMENT '头像',
+  `user_head` VARCHAR(255) DEFAULT NULL COMMENT '头像',
   `user_email` VARCHAR(30) DEFAULT NULL COMMENT '邮箱',
   `user_sex` INT(11) DEFAULT NULL COMMENT '性别',
   `login_count` VARCHAR(30) DEFAULT NULL COMMENT '登录次数',
@@ -145,19 +145,21 @@ CREATE TABLE `sys_user_role` (
 
 
 DROP TABLE IF EXISTS article;
-CREATE TABLE	article(
-id INT  PRIMARY KEY   NOT NULL AUTO_INCREMENT COMMENT  '主键，自增',
-title VARCHAR(200)  NOT NULL COMMENT '文章标题' ,
-typeid INT(11)  NOT NULL COMMENT '文章类型id',
-templateId INT(11) NOT NULL DEFAULT 1 COMMENT ' 模版id (默认为1，后续功能扩展)',
-createtime VARCHAR(50)  COMMENT '发布时间 ',
-author INT(11) COMMENT'文章作者id',
-wherefrom VARCHAR(1) DEFAULT 0  COMMENT '文章来源 （0:原创，1:转载）',
-sort INT  DEFAULT 1 COMMENT' 文章排序（0为置顶，默认为1，数字越大，等级越低。）',
-state INT COMMENT' 文章的状态（状态：0:未审核;1:审核中;2:审核通过;3:回收站)',
-a_explain VARCHAR(200)  COMMENT '文章描述 (可为空，一般是文章的前面一部分文字)',
-content BLOB  COMMENT '文章内容 ',
-bannerurl VARCHAR(100) COMMENT '文章外面展示的图片'
-)ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='cms 文章表';;
-
+CREATE TABLE `article` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `title` VARCHAR(200) NOT NULL COMMENT '文章标题',
+  `typeid` INT(11) NOT NULL COMMENT '文章类型id',
+  `templateId` INT(11) NOT NULL DEFAULT '1' COMMENT ' 模版id (默认为1，后续功能扩展)',
+  `createtime` VARCHAR(50) DEFAULT NULL COMMENT '发布时间 ',
+  `authorid` INT(11) DEFAULT NULL COMMENT '文章作者id',
+  `wherefrom` TINYINT(1) DEFAULT '0' COMMENT '文章来源 （0:原创，1:转载）',
+  `sort` INT(11) DEFAULT '1' COMMENT ' 文章排序（0为置顶，默认为1，数字越大，等级越低。）',
+  `state` INT(4) DEFAULT NULL COMMENT '文章的状态（状态：0:未审核;1:审核中;2:审核通过;3:回收站)',
+  `a_explain` VARCHAR(200) DEFAULT NULL COMMENT '文章描述 (可为空，60个字以内)',
+  `content` BLOB COMMENT '文章内容 ',
+  `bannerurl` VARCHAR(100) DEFAULT NULL COMMENT '文章外面展示的图片',
+  `attachmenturl` VARCHAR(255) DEFAULT NULL COMMENT '文章附件链接',
+  `attachmentname` VARCHAR(100) DEFAULT NULL COMMENT '文章附件名',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='cms 文章表'
 

@@ -39,6 +39,11 @@ public class UserManageController {
 
 	private static Log log = LogFactory.getLog(UserManageController.class);
     
+	/**
+	 * 后台登录界面
+	 * @param map
+	 * @return
+	 */
 	@RequestMapping("loginPage")
 	public String loginPage(ModelMap map){
 		map.addAttribute("title", "后台登录");
@@ -46,7 +51,7 @@ public class UserManageController {
 	}
 	
 	/**
-	 * 管理员登录
+	 * 后台管理员登录操作
 	 * @param loginName
 	 * @param password
 	 * @return
@@ -61,7 +66,6 @@ public class UserManageController {
 				usernamePasswordToken.setRememberMe(true);
 				subject.login(usernamePasswordToken);
 			}*/
-			
 		}else{
 			map.addAttribute("resultMsg",MessageStateConstant.AccountOrPasswordIsEmpty.getStateCode()+":"+MessageStateConstant.AccountOrPasswordIsEmpty.getMsg());
         	return "admin/login";
@@ -75,12 +79,15 @@ public class UserManageController {
 	/**
 	 * 添加管理员的界面
 	 * @return
+	 * @throws Exception 
 	 */
 	@RequestMapping(value = "addManagerPage")
-	public String addManager(ModelMap map) {
+	public String addManager(ModelMap map) throws Exception {
 		//获取部门数据
+		List<Department> departments = mIDepartmentServer.getEntities();
+		map.addAttribute("departments", departments);
 		map.addAttribute("title", "添加管理员");
-		map.addAttribute("resultMsg", "");
+		log.info("部门数据列表："+departments);
 		return "admin/manager/addManager";
 	}
 
@@ -94,6 +101,7 @@ public class UserManageController {
 	@RequestMapping("addManager")
 	public String addManager(Manager mManager) throws Exception {
 		int resultState = 0;
+		log.info("mManager："+mManager);
 		if (mManager != null) {
 			// 設置登录状态为false
 			mManager.setIslogin(false);
@@ -153,11 +161,15 @@ public class UserManageController {
 		return "";
 	}
     
+	/**
+	 * 管理员列表界面
+	 * @param map
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping("manager")
 	public String  managerList(ModelMap map) throws Exception{
 		map.addAttribute("title", "管理员列表");
-		List<Department> departments = mIDepartmentServer.getEntities();
-		map.addAttribute("departments", departments);
 		return "admin/manager/managerList";
 	}
 	
@@ -176,7 +188,7 @@ public class UserManageController {
 		 }else{
 			 json.put("msg", "");
 		 }
-		 json.put("count", entities.size());
+		 json.put("count", 12);
 		 json.put("data", entities);
  		return  json.toString();
 	}

@@ -17,8 +17,12 @@ import hnkjs.entities.PageBean;
  */
 public interface IBaseServer<T extends BaseEntity> {
     
-	
-	
+	/**
+	 * 获取总数
+	 * @return
+	 * @throws Exception
+	 */
+	public long getCount() throws Exception;
 	
 	/**
 	 * 获取一个实体对象
@@ -49,14 +53,15 @@ public interface IBaseServer<T extends BaseEntity> {
 	 * @return
 	 */
 	public	List<T> getEntitiesByStr(String str)throws Exception;
+	
 	/**
 	 * 分页查找
-	 * @param page 分页对象
-	 * @param orderType 排序类型
-	 * @param oderName 排序的字段
+	 * @param page  分页对象
 	 * @return
 	 */
-	public	List<T> getEnntitiesPage(PageBean<T> page,String orderType, String oderName);
+	public	List<T> getEntitiesPage(PageBean<T> page);
+	
+
 	
 	/**
 	 * 添加一个实体

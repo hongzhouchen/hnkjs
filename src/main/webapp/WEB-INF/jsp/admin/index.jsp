@@ -21,9 +21,8 @@
 			<div class="layui-logo">hnkjs-CMS</div>
 			<!-- 头部区域（可配合layui已有的水平导航） -->
 			<ul class="layui-nav layui-layout-left">
-				<li class="layui-nav-item"><a href="">控制台</a></li>
-				<li class="layui-nav-item"><a href="">商品管理</a></li>
-				<li class="layui-nav-item"><a href="">用户</a></li>
+				<li class="layui-nav-item"><a href="admin/Manager.action">控制台</a></li>
+				<li class="layui-nav-item"><a href="">数据统计</a></li>
 				<li class="layui-nav-item"><a href="javascript:;">其它系统</a>
 					<dl class="layui-nav-child">
 						<dd>
@@ -38,9 +37,7 @@
 					</dl></li>
 			</ul>
 			<ul class="layui-nav layui-layout-right">
-				<li class="layui-nav-item"><a href="javascript:;"> <img
-						src="http://t.cn/RCzsdCq" class="layui-nav-img">admin
-				</a>
+				<li class="layui-nav-item"><a href="javascript:;"> <img src="http://t.cn/RCzsdCq" class="layui-nav-img"> ${Manager.user_name}</a>
 					<dl class="layui-nav-child">
 						<dd>
 							<a href="">基本资料</a>
@@ -49,7 +46,7 @@
 							<a href="">安全设置</a>
 						</dd>
 					</dl></li>
-				<li class="layui-nav-item"><a href="">退出</a></li>
+				<li class="layui-nav-item"><a href="">安全退出</a></li>
 			</ul>
 		</div>
 
@@ -91,7 +88,7 @@
 								<a href="javascript:;" data-url="admin/manager.action" data-title="管理员" data-id="8">系统管理员</a>
 							</dd>
 						</dl></li>
-					<li class="layui-nav-item"><a href="javascript:;"><i class="layui-icon"></i>文章管理</a>
+					<li class="layui-nav-item"><a href="javascript:;"><i class="layui-icon">&#xe705;</i>&nbsp;文章管理</a>
 						<dl class="layui-nav-child">
 							<dd>
 								<a href="javascript:;" data-title="文章类别" data-id="9">文章类别</a>
@@ -100,7 +97,7 @@
 								<a href="javascript:;" data-title="文章列表" data-id="10">文章列表</a>
 							</dd>
 						</dl></li>
-					<li class="layui-nav-item"><a href="javascript:;"><i class="layui-icon"></i>组织架构</a>
+					<li class="layui-nav-item"><a href="javascript:;"><i class="layui-icon">&#xe647;</i>&nbsp;组织架构</a>
 						<dl class="layui-nav-child">
 							<dd>
 								<a href="javascript:;" data-title="部门管理" data-id="11">部门管理</a>
@@ -113,7 +110,7 @@
 							</dd>
 						</dl></li>
 					<li class="layui-nav-item site-demo-active">  
-					<a  href="javascript:;" ><i class="layui-icon"></i>数据统计</a>
+					<a  href="javascript:;" ><i class="layui-icon">&#xe62c;</i>&nbsp;数据统计</a>
 					 <dl class="layui-nav-child">
 					    <dd>
 							<a href="javascript:;" data-title="文章访问数据" data-url="www.baidu.com" data-id="14">文章访问数据</a>

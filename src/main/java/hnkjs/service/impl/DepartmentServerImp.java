@@ -26,10 +26,11 @@ public class DepartmentServerImp implements IDepartmentServer {
 		return mDepaertmentMapper.geDepartmentesByStr(str);
 	}
 	
+	
 	@Override
-	public List<Department> getEnntitiesPage(PageBean<Department> page, String orderType, String oderName) {
-		// TODO Auto-generated method stub
-		return mDepaertmentMapper.getDepartmentesByPage(page, orderType, oderName);
+	public List<Department> getEntitiesPage(PageBean<Department> page) {
+		
+		return mDepaertmentMapper.getDepartmentesByPage(page.getOffset(), page.getLimit(), page.getPresentstate());
 	}
 
 	@Override
@@ -75,6 +76,11 @@ public class DepartmentServerImp implements IDepartmentServer {
 		// TODO Auto-generated method stub
 		return  mDepaertmentMapper.getDepartmentes();
 		
+	}
+	@Override
+	public long getCount() throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 
