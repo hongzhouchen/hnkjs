@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="hnkjs.mapper.ArticleMapper">
+	<sql id="slecteInfo"></sql>
+	
+	<select id="getCount" resultType="long">
+		select count(*) from article;
+	</select>
+
+	<select id="getArticleById" resultType="hnkjs.entities.Article">
+		SELECT
+		`id`,
+		`title`,
+		`typeid`,
+		`templateId`,
+		`createtime`,
+		`authorid`,
+		`wherefrom`,
+		`sort`,
+		`state`,
+		`a_explain`,
+		`content`,
+		`bannerurl`,
+		`attachmenturl`,
+		`attachmentname`
+		FROM
+		`hnkjs`.`article`
+		where  id=#{id};
+	</select>
+    
+    <select id="getEntityBytitle" parameterType="String" resultType="hnkjs.entities.Article">
+       SELECT
+		`id`,
+		`title`,
+		`typeid`,
+		`templateId`,
+		`createtime`,
+		`authorid`,
+		`wherefrom`,
+		`sort`,
+		`state`,
+		`a_explain`,
+		`content`,
+		`bannerurl`,
+		`attachmenturl`,
+		`attachmentname`
+		FROM
+		`hnkjs`.`article`
+		where  title=#{title};
+    </select>
+    
+    
+</mapper>

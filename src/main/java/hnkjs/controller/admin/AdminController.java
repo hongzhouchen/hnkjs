@@ -20,10 +20,23 @@ public class AdminController {
 		//1、获取登录着信息
 		//2、权限查找（）
 		//3、展示内容
-		map.addAttribute("title", "马上银--后台首页");
-		
+		map.addAttribute("title", "马上银--后台首页");	
 		return "admin/index";
 	}
+	
+	/**
+	 * 控制面板界面
+	 * @param map
+	 * @return
+	 */
+	@RequestMapping("ControPage")
+	public String getControPage(ModelMap map){
+		
+		return "admin/controlPage";
+	}
+	
+	
+	
 	
 	
 	

@@ -52,7 +52,10 @@ public class ManagerServiceImp implements IManagerService {
 
 	@Override
 	public List<Manager> queryAllManage(int pageIndex, int pageSize, boolean presentstate) throws Exception {
-		// TODO Auto-generated method stub
+		//由于使用的Layui 的数据列表 使用的分页是从1开始的，而mysql 从0开始的,mysql limit 获取数据应该是
+		if(pageIndex>0){
+			pageIndex=(pageIndex-1)*pageSize;
+		}
 		return mManagerMapper.queryAllManage(pageIndex, pageSize, presentstate);
 	}
 

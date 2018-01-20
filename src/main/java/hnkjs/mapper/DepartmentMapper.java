@@ -10,7 +10,13 @@ import hnkjs.entities.PageBean;
 import hnkjs.entities.Role;
 
 public interface DepartmentMapper  {
-
+   
+	/**
+	 * 获取部门总数
+	 * @return 总数
+	 */
+	public long getCount(); 
+	
 	/**
 	 * 根据id 获取部门实体
 	 * @param id
@@ -38,13 +44,13 @@ public interface DepartmentMapper  {
 	public List<Department> getDepartmentes();
 	
 	/**
-	 * 分页获取部门列表
-	 * @param page 分页对象
-	 * @param orderType 排序类型,  默认倒序 
-	 * @param oderName  排序的字段, 默认id
-	 * @return
+	 * 分页获取数据
+	 * @param offset 当前页与一页总数的计算值：（当前页-1）*总页数
+	 * @param pageSize  一页总数
+	 * @param presentstate 某一个状态 
+	 * @return 该状态的的分页数据集合
 	 */
-	public List<Department> getDepartmentesByPage(@Param("page") PageBean<Department> page, @Param("orderType")String orderType, @Param("oderName")String oderName);
+	public List<Department> getDepartmentesByPage(@Param("offset")int offset, @Param("pageSize")int pageSize, @Param("presentstate")boolean presentstate);
 	
 	/**
 	 * 添加部门

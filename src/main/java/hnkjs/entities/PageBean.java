@@ -8,17 +8,30 @@ public class PageBean<T> extends BaseEntity {
 	/** 总记录数 */
 	private int total;
 	/** 分页结果 */
-	private List<T> root;
+	private List<T> data;
 	/** 开始页码 */
 	private int start;
 	/** 每页多少 */
 	private int limit;
 	/** 查询条件 */
 	private String wheres;
-
+	/**状态*/
+	private boolean presentstate; //某个状态
+    
 	private int currentPage; // 当前页
-	private int currentResult; // 当前记录起始索引
+	private int offset;     //当前记录起始索引     LiMIT offset , pagesize
 	private int totalPage; // 总页数
+	
+	
+	public boolean getPresentstate() {
+		return presentstate;
+	}
+
+	public void setPresentstate(boolean presentstate) {
+		this.presentstate = presentstate;
+	}
+
+	
 
 	public int getCurrentPage() {
 		if (currentPage <= 0)
@@ -30,15 +43,15 @@ public class PageBean<T> extends BaseEntity {
 		this.currentPage = currentPage;
 	}
 
-	public int getCurrentResult() {
-		currentResult = (getCurrentPage() - 1) * getLimit();
-		if (currentResult < 0)
-			currentResult = 0;
-		return currentResult;
+	public int getOffset() {
+		offset = (getCurrentPage() - 1) * getLimit();
+		if (offset < 0)
+			offset = 0;
+		return offset;
 	}
 
-	public void setCurrentResult(int currentResult) {
-		this.currentResult = currentResult;
+	public void setOffset(int offset) {
+		this.offset = offset;
 	}
 
 	public int getTotalPage() {
@@ -60,13 +73,12 @@ public class PageBean<T> extends BaseEntity {
 	public void setTotal(int total) {
 		this.total = total;
 	}
-
-	public List<?> getRoot() {
-		return root;
+	public List<T> getData() {
+		return data;
 	}
 
-	public void setRoot(List<T> root) {
-		this.root = root;
+	public void setData(List<T> data) {
+		this.data = data;
 	}
 
 	public int getStart() {
@@ -95,7 +107,7 @@ public class PageBean<T> extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return start + " " + total + " " + root;
+		return start + " " + total + " " + data;
 	}
 
 }
