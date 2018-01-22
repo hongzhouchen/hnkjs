@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import hnkjs.entities.Article;
 import hnkjs.entities.PageBean;
@@ -39,11 +40,12 @@ public class ArticleController {
 		switch (page) {
 		case "list":
 			resultPage="admin/article/articleList";
+			break;
 		case "add":
-			resultPage="admin/department/addDepartment";
+			resultPage="admin/article/addArticle";
 			break;
 		case "updata":
-			resultPage="admin/department/updataDepartment";
+			resultPage="admin/article/updataArticle";
 			break;
 		default:
 			resultPage="admin/article/articleList";
@@ -52,6 +54,7 @@ public class ArticleController {
 		return resultPage;
 	}
 	
+	@ResponseBody
 	@RequestMapping("articleList")
 	public String list(int page,int limit) throws Exception{
 		//放置传入的刹参数不正确
@@ -70,7 +73,6 @@ public class ArticleController {
 		pageBean.setOffset((page-1)*limit);
 		//获取数据
 		List<Article> entitiesPage = mIArticleServer.getEntitiesPage(pageBean);
-		
 		JSONObject json=new JSONObject();
 		 json.put("code", 0);
 		 json.put("msg", "success");
@@ -93,7 +95,7 @@ public class ArticleController {
 		
 		int save = mIArticleServer.save(mArticle);
 		
-		return "";
+		return "admin/article/addarticle";
 	}
 	
 	

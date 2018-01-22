@@ -94,7 +94,7 @@
 								<a href="javascript:;" data-title="文章类别" data-id="9">文章类别</a>
 							</dd>
 							<dd>
-								<a href="javascript:;" data-title="文章列表" data-id="10">文章列表</a>
+								<a href="javascript:;" data-url="admin/article.action?page=list"  data-title="文章列表" data-id="10">文章列表</a>
 							</dd>
 						</dl></li>
 					<li class="layui-nav-item"><a href="javascript:;"><i class="layui-icon">&#xe647;</i>&nbsp;组织架构</a>
