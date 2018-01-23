@@ -21,13 +21,18 @@ public class Article extends BaseEntity {
 	private int a_explain;      // '文章描述 (可为空，一般是文章的前面一部分文字)',
 	private String content;     // '文章内容 ',
 	private String bannerurl;   // '文章外面展示的图片'
+	private long lookcount;     //文章阅读量
+	
 	
 	private String attachmenturl;
 	private String attachmentname;
 	
 	public Article(){super();}
+	
+	
+	
 	public Article(int id, String title, int typeid, int templateId, int createtime, int authorid, boolean wherefrom,
-			int sort, int state, int a_explain, String content, String bannerurl, String attachmenturl,
+			int sort, int state, int a_explain, String content, String bannerurl, long lookcount, String attachmenturl,
 			String attachmentname) {
 		super();
 		this.id = id;
@@ -42,15 +47,30 @@ public class Article extends BaseEntity {
 		this.a_explain = a_explain;
 		this.content = content;
 		this.bannerurl = bannerurl;
+		this.lookcount = lookcount;
 		this.attachmenturl = attachmenturl;
 		this.attachmentname = attachmentname;
 	}
+
+	
+
+
 	@Override
 	public String toString() {
 		return "Article [id=" + id + ", title=" + title + ", typeid=" + typeid + ", templateId=" + templateId
 				+ ", createtime=" + createtime + ", authorid=" + authorid + ", wherefrom=" + wherefrom + ", sort="
 				+ sort + ", state=" + state + ", a_explain=" + a_explain + ", content=" + content + ", bannerurl="
-				+ bannerurl + ", attachmenturl=" + attachmenturl + ", attachmentname=" + attachmentname + "]";
+				+ bannerurl + ", lookcount=" + lookcount + ", attachmenturl=" + attachmenturl + ", attachmentname="
+				+ attachmentname + "]";
+	}
+
+
+
+	public long getLookcount() {
+		return lookcount;
+	}
+	public void setLookcount(long lookcount) {
+		this.lookcount = lookcount;
 	}
 	public int getId() {
 		return id;

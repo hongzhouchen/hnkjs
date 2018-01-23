@@ -20,6 +20,7 @@
 		`state`,
 		`a_explain`,
 		`content`,
+		`lookcount`,
 		`bannerurl`,
 		`attachmenturl`,
 		`attachmentname`
@@ -41,6 +42,7 @@
 		`state`,
 		`a_explain`,
 		`content`,
+		`lookcount`,
 		`bannerurl`,
 		`attachmenturl`,
 		`attachmentname`
@@ -48,6 +50,27 @@
 		`hnkjs`.`article`
 		where  title=#{title};
     </select>
-    
+    <select id="getArticlesPage" resultType="hnkjs.entities.Article">
+        SELECT
+		`id`,
+		`title`,
+		`typeid`,
+		`templateId`,
+		`createtime`,
+		`authorid`,
+		`wherefrom`,
+		`sort`,
+		`state`,
+		`a_explain`,
+		`content`,
+		`lookcount`,
+		`bannerurl`,
+		`attachmenturl`,
+		`attachmentname`
+		FROM
+		`hnkjs`.`article`
+		where  typeid=#{typid} and state=#{state};
+         LIMIT #{offset}, #{pageSize};
+    </select>
     
 </mapper>

@@ -16,5 +16,9 @@
 	  <bean id="IBannerServer" class="hnkjs.service.impl.BannerServerImp"/> 
 	  <bean id="IManagerService" class="hnkjs.service.impl.ManagerServiceImp"/> 
 	  <bean id="IDepartmentServer" class="hnkjs.service.impl.DepartmentServerImp"/> 
+<<<<<<< HEAD
 	  <bean id="IArticleServer" class="hnkjs.service.impl.ArticleServerImp"/> 
+=======
+	  <bean id="IArticleServer" class="hnkjs.service.impl.ArticleServerImp"></bean>
+>>>>>>> 14cae397676ce804c116c0b5579990f95f3000ce
 </beans>
