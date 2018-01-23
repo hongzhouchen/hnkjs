@@ -16,5 +16,5 @@
 	  <bean id="IBannerServer" class="hnkjs.service.impl.BannerServerImp"/> 
 	  <bean id="IManagerService" class="hnkjs.service.impl.ManagerServiceImp"/> 
 	  <bean id="IDepartmentServer" class="hnkjs.service.impl.DepartmentServerImp"/> 
-	  
+	  <bean id="IArticleServer" class="hnkjs.service.impl.ArticleServerImp"/> 
 </beans>

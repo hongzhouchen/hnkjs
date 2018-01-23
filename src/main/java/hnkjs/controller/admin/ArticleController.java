@@ -76,6 +76,7 @@ public class ArticleController {
 		 json.put("msg", "success");
 		 json.put("count", count);
 		 json.put("data", entitiesPage);
+		 logger.info(json.toString());
 		return  json.toString();
 		
 	}

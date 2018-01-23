@@ -63,9 +63,7 @@ public interface ArticleMapper {
 	 * @return 
 	 */
 	public List<Article> getArticlesPageByTypeId(@Param("offset")int offset, @Param("pageSize")int pageSize, @Param("typid")int typeid, @Param("state")int state);
-	
-	
-	
+
 	/**
 	 * 添加文章
 	 * @param t 文章实体

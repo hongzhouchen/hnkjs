@@ -14,7 +14,4 @@ public interface IArticleServer extends IBaseServer<Article>{
 	 */
 	public List<Article> queryArticleByType(PageBean<Article> pageBean,int typeId,int state);
 	
-	
-	
-	
 }
